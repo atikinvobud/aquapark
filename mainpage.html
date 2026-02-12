@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аквапарк </title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f6f8fa;
+    }
+
+    section {
+      padding: 48px 0;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* NAV */
+    .hero-custom {
+      background: #30D5C8;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 600;
+      margin-right: 10rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* UI */
+    .card-custom {
+      background: #C0EEF1;
+      border-radius: 12px;
+      height: 100%;
+    }
+
+    .btn-main {
+      background: #30D5C8;
+      border-radius: 14px;
+      font-size: 18px;
+      padding: 12px 28px;
+      border: none;
+    }
+
+    .image-placeholder {
+      background: #aaa;
+      height: 240px;
+      border-radius: 12px;
+    }
+
+    .box-map {
+      height: 380px;
+      background: #aaa;
+      border-radius: 12px;
+    }
+
+    footer {
+      background: #fff;
+      border-top: 1px solid #e5e7eb;
+      padding: 32px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 32px 0;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar hero-custom">
+  <div class="page nav-inner">
+    <div class="logo">Аквапарк </div>
+
+    <div class="nav-links">
+      <a href="#about">Информация</a>
+      <a href="#prices">Тарифы</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+  </div>
+</nav>
+
+<section>
+  <div class="page">
+    <div class="columns is-vcentered">
+      <div class="column is-6">
+        <h1 class="title is-2">Добро пожаловать в Аквапарк!</h1>
+        <p class="subtitle is-5">Лучший отдых у моря для всей семьи</p>
+        <a href="form.html" class="button btn-main mt-4">Купить билет</a>
+      </div>
+
+      <div class="column is-6">
+        <div class="image-placeholder"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="page">
+    <h2 class="title has-text-centered">О нашем аквапарке</h2>
+    <p class="content is-size-5 has-text-centered">
+      Аквапарк открылся в 2003 году и расположен на берегу Черного моря.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="page">
+    <div class="columns has-text-centered">
+      <div class="column"><b>20 000 м²</b><br>площадь</div>
+      <div class="column"><b>75 км/ч</b><br>скорость</div>
+      <div class="column"><b>Шоу</b><br>программы</div>
+      <div class="column"><b>Кафе</b><br>и фудкорт</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page">
+    <h2 class="title has-text-centered">Аттракционы</h2>
+
+    <div class="columns">
+      <div class="column">
+        <div class="card card-custom">
+          <div class="image-placeholder"></div>
+          <div class="card-content">
+            <p class="title is-5"><a href="attraction.html">Super Bowl</a></p>
+            <p>Быстрый спуск с вращением.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card card-custom">
+          <div class="image-placeholder"></div>
+          <div class="card-content">
+            <p class="title is-5"><a href="attraction.html">Multiside</a></p>
+            <p>Спуск компанией.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card card-custom">
+          <div class="image-placeholder"></div>
+          <div class="card-content">
+            <p class="title is-5"><a href="attraction.html">SuperLoop</a></p>
+            <p>Экстремальный спуск.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page">
+    <h2 class="title has-text-centered">Рестораны</h2>
+
+    <div class="columns">
+      <div class="column">
+        <div class="card card-custom">
+          <div class="image-placeholder"></div>
+          <div class="card-content">
+            <p class="title is-5"><a href="restaurant.html">Аквабар</a></p>
+            <p>Авторские коктейли.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card card-custom">
+          <div class="image-placeholder"></div>
+          <div class="card-content">
+            <p class="title is-5"><a href="restaurant.html">Кафе</a></p>
+            <p>Комплексные обеды.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card card-custom">
+          <div class="image-placeholder"></div>
+          <div class="card-content">
+            <p class="title is-5"><a href="restaurant.html">Фудкорт</a></p>
+            <p>Пицца и закуски.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="prices">
+  <div class="page">
+    <h2 class="title has-text-centered">Тарифы</h2>
+
+    <div class="columns">
+      <div class="column">
+        <div class="card card-custom has-text-centered p-5">
+          <p class="title">Детский</p>
+          <p class="subtitle">500 ₽</p>
+          <a  href="form.html" class="button btn-main">Купить</a>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card card-custom has-text-centered p-5">
+          <p class="title">Взрослый</p>
+          <p class="subtitle">1000 ₽</p>
+          <a  href="form.html" class="button btn-main">Купить</a>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card card-custom has-text-centered p-5">
+          <p class="title">Семейный</p>
+          <p class="subtitle">2000 ₽</p>
+          <a  href="form.html" class="button btn-main">Купить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="page">
+    <h2 class="title has-text-centered">Как добраться</h2>
+    <div class="box-map"></div>
+  </div>
+</section>
+
+<section>
+  <div class="page">
+    <div class="columns">
+      <div class="column">
+        <div class="card card-custom p-5">
+          <p class="title is-5">На автомобиле</p>
+          <p>1ч 30мин<br>Парковка есть</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card card-custom p-5">
+          <p class="title is-5">Общественным транспортом</p>
+          <p>~2 часа</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contacts">
+  <div class="page footer-row">
+    <span><b>Контакты:</b></span>
+    <span>+7 (22222) 2-22-22</span>
+    <span>+7 (333) 333-33-33</span>
+    <span>г. АААА, ул. БББББ, 79</span>
+  </div>
+</footer>
+
+</body>
+</html>

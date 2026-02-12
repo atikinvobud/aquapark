@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аттракцион — Аквапарк</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    body {
+      background: #f9fdff;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .thumbnails img {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .thumbnails img:hover {
+      transform: scale(1.05);
+      border-color: #30d5c8;
+    }
+
+    .info-section {
+      background: #c0eef1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .info-item {
+      font-size: 22px;
+      margin-top: 15px;
+      color: #000;
+    }
+
+    .info-description {
+      font-size: 20px;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      background: #30d5c8;
+      color: white;
+      font-weight: 600;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="main-title">Аттракцион “SuperBowl”</div>
+
+      <div class="columns is-variable is-8">
+        <div class="column is-half">
+          <div class="gallery">
+            <img id="mainImage" class="main-image" src="https://placehold.co/500x400" alt="Главное фото">
+
+            <div class="thumbnails">
+              <img src="https://placehold.co/200x150" alt="Фото 1" onclick="changeImage(this)">
+              <img src="https://placehold.co/200x150" alt="Фото 2" onclick="changeImage(this)">
+              <img src="https://placehold.co/200x150" alt="Фото 3" onclick="changeImage(this)">
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="info-section">
+            <div class="info-item"><strong>Высота:</strong> 14 м</div>
+            <div class="info-item"><strong>Длина спуска:</strong> 80 м</div>
+            <div class="info-item"><strong>Ограничения:</strong><br/>
+              Рост больше 130 см<br/>
+              Дети в сопровождении взрослого
+            </div>
+            <div class="info-item"><strong>Описание:</strong>
+              <div class="info-description">
+                «Воронка» - спуск на двухместных кругах, высота 14 м, длина 80 м. Любители острых ощущений влетают в воронку и крутятся перед падением в бассейн.
+              </div>
+            </div>
+
+            <a href="mainpage.html" class="button back-btn is-fullwidth">Вернуться на главный экран</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<script>
+  function changeImage(thumbnail) {
+    const main = document.getElementById('mainImage');
+    main.src = thumbnail.src;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кафе — Аквапарк</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    body {
+      background: #f9fdff;
+      margin: 0; 
+    }
+
+    .section {
+      padding-top: 0;
+      padding-bottom: 20px;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin: 10px 0 30px 0; 
+      color: #333;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .thumbnails img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .thumbnails img:hover {
+      transform: scale(1.05);
+      border-color: #30d5c8;
+    }
+
+    .menu-section {
+      background: #c0eef1;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .menu-category {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 10px;
+      color: #000;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      padding: 3px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .back-btn {
+      margin-top: 15px;
+      background: #30d5c8;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section">
+    <div class="container is-fullhd">
+      
+      <div class="main-title">Уютное кафе</div>
+
+      <div class="columns is-variable is-5 is-multiline">
+        <div class="column is-half">
+          <div class="gallery">
+            <img id="mainImage" class="main-image" src="https://placehold.co/500x400" alt="Главное фото">
+
+            <div class="thumbnails">
+              <img src="https://placehold.co/198x151" alt="Фото 1" onclick="changeImage(this)">
+              <img src="https://placehold.co/196x151" alt="Фото 2" onclick="changeImage(this)">
+              <img src="https://placehold.co/200x150" alt="Фото 3" onclick="changeImage(this)">
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="menu-section">
+            <div class="menu-category">Салаты:</div>
+            <div class="menu-item"><span>Цезарь</span><span>300 ₽</span></div>
+            <div class="menu-item"><span>Греческий</span><span>300 ₽</span></div>
+            <div class="menu-item"><span>Оливье</span><span>300 ₽</span></div>
+
+            <div class="menu-category">Супы:</div>
+            <div class="menu-item"><span>Борщ</span><span>250 ₽</span></div>
+            <div class="menu-item"><span>Куриный суп</span><span>250 ₽</span></div>
+
+            <div class="menu-category">Горячие закуски:</div>
+            <div class="menu-item"><span>Крылышки</span><span>350 ₽</span></div>
+
+            <div class="menu-category">Горячие блюда:</div>
+            <div class="menu-item"><span>Стейк</span><span>600 ₽</span></div>
+
+            <div class="menu-category">Десерты:</div>
+            <div class="menu-item"><span>Мороженое</span><span>150 ₽</span></div>
+
+            <a href="mainpage.html" class="button back-btn is-fullwidth">Вернуться на главный экран</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<script>
+  function changeImage(thumbnail) {
+    document.getElementById('mainImage').src = thumbnail.src;
+  }
+</script>
+
+</body>
+</html>
