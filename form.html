@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Купить билет — Аквапарк </title>
+  <title>Купить билет — Аквапарк</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
@@ -107,10 +107,11 @@
       font-size: 20px;
       font-weight: 500;
       padding: 0 48px;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
-
 <body>
 
 <section class="section pt-5">
@@ -118,90 +119,96 @@
 
     <h1 class="title has-text-centered mb-5">Купить билет</h1>
 
-    <div class="box mb-5">
-      <div class="time-selection">
-        <div class="time-label">Время посещения:</div>
-
-        <div class="time-card active" onclick="selectTime(this)">
-          Утро (10:00 – 18:00)
-        </div>
-
-        <div class="time-card" onclick="selectTime(this)">
-          Вечер (14:00 – 18:00)
+    <form id="ticketForm">
+      <div class="box mb-5">
+        <div class="time-selection">
+          <div class="time-label">Время посещения:</div>
+          <div class="time-card active" data-time="morning" onclick="selectTime(this)">
+            Утро (10:00 – 18:00)
+          </div>
+          <div class="time-card" data-time="evening" onclick="selectTime(this)">
+            Вечер (14:00 – 18:00)
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-block">
-      <h2 class="subtitle mb-4">Выберите тариф:</h2>
+      <div class="form-block">
+        <h2 class="subtitle mb-4">Выберите тариф:</h2>
 
-      <div class="columns is-variable is-4">
-        <div class="column">
-          <div class="tariff-card">
-            <p class="is-size-5 mb-2">Детский</p>
-            <p class="tariff-price">500 ₽</p>
+        <div class="columns is-variable is-4">
+          <div class="column">
+            <div class="tariff-card">
+              <p class="is-size-5 mb-2">Детский</p>
+              <p class="tariff-price">500 ₽</p>
+              <div class="counter">
+                <button type="button" onclick="change('child', -1)">−</button>
+                <span id="child">0</span>
+                <button type="button" onclick="change('child', 1)">+</button>
+              </div>
+            </div>
+          </div>
 
-            <div class="counter">
-              <button onclick="change('child', -1)">−</button>
-              <span id="child">0</span>
-              <button onclick="change('child', 1)">+</button>
+          <div class="column">
+            <div class="tariff-card">
+              <p class="is-size-5 mb-2">Взрослый</p>
+              <p class="tariff-price">1000 ₽</p>
+              <div class="counter">
+                <button type="button" onclick="change('adult', -1)">−</button>
+                <span id="adult">0</span>
+                <button type="button" onclick="change('adult', 1)">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="tariff-card">
+              <p class="is-size-5 mb-2">Семейный</p>
+              <p class="tariff-price">2000 ₽</p>
+              <div class="counter">
+                <button type="button" onclick="change('family', -1)">−</button>
+                <span id="family">0</span>
+                <button type="button" onclick="change('family', 1)">+</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="column">
-          <div class="tariff-card">
-            <p class="is-size-5 mb-2">Взрослый</p>
-            <p class="tariff-price">1000 ₽</p>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <div class="field">
+              <label class="label">Ваше имя</label>
+              <input class="input" type="text" id="fullname" placeholder="Введите фамилию и имя">
+              <p class="help" id="fullnameHelp">Введите фамилию и имя</p>
+            </div>
 
-            <div class="counter">
-              <button onclick="change('adult', -1)">−</button>
-              <span id="adult">0</span>
-              <button onclick="change('adult', 1)">+</button>
+            <div class="field">
+              <label class="label">Ваша почта</label>
+              <input class="input" type="email" id="email" placeholder="example@mail.ru">
+              <p class="help" id="emailHelp">example@mail.ru</p>
+            </div>
+
+            <div class="field">
+              <label class="label">Ваш телефон</label>
+              <input class="input" type="tel" id="phone" placeholder="+7 (___) ___-__-__">
+              <p class="help" id="phoneHelp">10 цифр после +7</p>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" id="agreement">
+                  Я согласен на обработку персональных данных
+                </label>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="column">
-          <div class="tariff-card">
-            <p class="is-size-5 mb-2">Семейный</p>
-            <p class="tariff-price">2000 ₽</p>
-
-            <div class="counter">
-              <button onclick="change('family', -1)">−</button>
-              <span id="family">0</span>
-              <button onclick="change('family', 1)">+</button>
-            </div>
-          </div>
+        <div class="mt-5">
+          <button type="submit" class="button buy-btn">Купить билет</button>
         </div>
       </div>
-
-      <div class="columns mt-5">
-        <div class="column is-6">
-          <div class="field">
-            <label class="label">Ваше имя</label>
-            <input class="input" type="text" placeholder="Введите имя">
-          </div>
-
-          <div class="field">
-            <label class="label">Ваша почта</label>
-            <input class="input" type="email" placeholder="Введите email">
-          </div>
-
-          <div class="field">
-            <label class="label">Ваш телефон</label>
-            <input class="input" type="tel" placeholder="+7 (___) ___-__-__">
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-5">
-        <a href="index.html" class="button buy-btn">
-          Купить билет
-        </a>
-      </div>
-
-    </div>
+    </form>
 
   </div>
 </section>
@@ -219,6 +226,138 @@
     });
     el.classList.add('active');
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('ticketForm');
+    if (!form) return;
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      document.querySelectorAll('.input.is-danger').forEach(el => {
+        el.classList.remove('is-danger');
+      });
+      document.querySelectorAll('.help.is-danger').forEach(el => el.remove());
+
+      let isValid = true;
+
+      const fullname = document.getElementById('fullname');
+      const fullnameValue = fullname.value.trim();
+      if (fullnameValue === '') {
+        showError(fullname, 'Введите имя');
+        isValid = false;
+      } else if (fullnameValue.split(' ').filter(w => w.length > 0).length < 2) {
+        showError(fullname, 'Введите фамилию и имя');
+        isValid = false;
+      }
+
+      const phone = document.getElementById('phone');
+      const phoneValue = phone.value.trim();
+      const phoneDigits = phoneValue.replace(/\D/g, '');
+      if (phoneValue === '') {
+        showError(phone, 'Введите номер телефона');
+        isValid = false;
+      } else if (phoneDigits.length < 10) {
+        showError(phone, 'Введите 10 цифр номера (после +7)');
+        isValid = false;
+      }
+
+      const email = document.getElementById('email');
+      const emailValue = email.value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailValue === '') {
+        showError(email, 'Введите email');
+        isValid = false;
+      } else if (!emailPattern.test(emailValue)) {
+        showError(email, 'Введите корректный email');
+        isValid = false;
+      }
+
+      const agreement = document.getElementById('agreement');
+      if (!agreement.checked) {
+        const agreementField = agreement.closest('.field');
+        const help = document.createElement('p');
+        help.classList.add('help', 'is-danger');
+        help.textContent = 'Необходимо согласие';
+        agreementField.appendChild(help);
+        isValid = false;
+      }
+
+      const child = parseInt(document.getElementById('child').textContent);
+      const adult = parseInt(document.getElementById('adult').textContent);
+      const family = parseInt(document.getElementById('family').textContent);
+      if (child + adult + family === 0) {
+        const formBlock = document.querySelector('.form-block');
+        const help = document.createElement('p');
+        help.classList.add('help', 'is-danger', 'has-text-centered');
+        help.textContent = 'Выберите хотя бы один билет';
+        formBlock.appendChild(help);
+        isValid = false;
+      }
+
+      if (isValid) {
+        const activeTimeCard = document.querySelector('.time-card.active');
+        const timeText = activeTimeCard ? activeTimeCard.textContent.trim() : 'Не выбрано';
+
+        const formData = {
+          fullname: fullnameValue,
+          phone: phoneValue,
+          email: emailValue,
+          time: timeText,
+          childTickets: child,
+          adultTickets: adult,
+          familyTickets: family,
+          message: '(не заполнено)'
+        };
+
+        const event = new CustomEvent('formValid', { detail: formData });
+        document.dispatchEvent(event);
+
+        alert('Форма отправлена! Данные в консоли.');
+      }
+    });
+
+    function showError(input, message) {
+      input.classList.add('is-danger');
+      const help = document.createElement('p');
+      help.classList.add('help', 'is-danger');
+      help.textContent = message;
+      const control = input.closest('.control');
+      if (control) {
+        control.parentNode.appendChild(help);
+      } else {
+        input.parentNode.appendChild(help);
+      }
+    }
+    document.querySelectorAll('.input').forEach(input => {
+      input.addEventListener('input', function() {
+        this.classList.remove('is-danger');
+        const parent = this.closest('.field');
+        if (parent) {
+          const errors = parent.querySelectorAll('.help.is-danger');
+          errors.forEach(el => el.remove());
+        }
+      });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('formValid', function(event) {
+      const data = event.detail;
+
+      console.clear(); 
+      console.log('=== Данные формы ===');
+      console.log('ФИО:', data.fullname);
+      console.log('Телефон:', data.phone);
+      console.log('Email:', data.email);
+      console.log('Время посещения:', data.time);
+      console.log('Детских билетов:', data.childTickets);
+      console.log('Взрослых билетов:', data.adultTickets);
+      console.log('Семейных билетов:', data.familyTickets);
+      console.log('Сообщение:', data.message);
+      console.log('Время отправки:', new Date().toLocaleString());
+    });
+  });
 </script>
 
 </body>
